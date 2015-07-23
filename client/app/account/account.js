@@ -9,8 +9,8 @@ angular.module('a24HourDoorAmericaApp')
         controller: 'LoginCtrl'
       })
       .state('signup', {
-        url: '/admin',
-        templateUrl: 'app/admin/admin.html',
+        url: '/admin/newuser',
+        templateUrl: 'app/admin/newuser.html',
         controller: 'SignupCtrl'
       })
       .state('settings', {

@@ -109,7 +109,13 @@ angular.module('a24HourDoorAmericaApp')
       isLoggedIn: function() {
         return currentUser.hasOwnProperty('role');
       },
-
+      isServiceTechButtonActive: function() {
+        if ( $( 'input[id=isServiceTechButton]:checked').length > 0 ) {
+          return true;
+        } else {
+          return false;
+        } 
+      },
       /**
        * Waits for currentUser to resolve before checking if user is logged in
        */

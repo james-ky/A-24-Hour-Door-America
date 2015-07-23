@@ -2,28 +2,13 @@
 
 <div class="container">
 <h2 ng-show="isLoggedIn()">Hello {{ getCurrentUser().name }}, you have NaN total jobs open.</h2>
-
 <hr>
-
 <div class="row">
     <div class="col-sm-12">
       <h1>Create New User</h1>
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="register(form)" novalidate>
-
-        <div class="radio">
-          <label>
-            <input ng-click="showTruckInput()" type="radio" name="employeeType" id="serviceTechButton" value="option1" aria-label="..."><p>Service Tech</p>
-            <input ng-click="showTruckInput()" type="radio" name="employeeType" id="csrButton" value="option1" aria-label="..."><p>Customer Service Representative</p>
-            <input ng-click="showTruckInput()" type="radio" name="employeeType" id="adminButton" value="option1" aria-label="..."><p>Admin</p>
-          </label>
-        </div>
-
-        <div class="form-group">
-          <label ng-show="showTruckInput()">Truck Number</label>
-          <input ng-show="showTruckInput()" type="text" name="truckNumber" class="form-control"/>
-        </div>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
                                             'has-error': form.name.$invalid && submitted }">
@@ -70,7 +55,7 @@
             {{ errors.password }}
           </p>
         </div>
-        
+
         <div>
           <button class="btn btn-inverse btn-lg btn-login" type="submit">
             Sign up
@@ -89,7 +74,6 @@
     <li class="list-group-item" ng-repeat="user in users">
         <strong>{{user.name}}</strong><br>
         <span class="text-muted">{{user.email}}</span>
-        <span class="text-muted">{{truck.number}}</span>
         <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
     </li>
   </ul>
